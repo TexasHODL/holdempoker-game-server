@@ -1,0 +1,24 @@
+{
+	"connector": [
+		{"id":"first", "time": "0 0/5 * * * *", "action": "autoTasksManager.logout"}
+	],
+	"room": [
+		{"id":"second", "time": "0 0/10 * * * *", "action": "autoTasksManager.idlePlayersRemove",
+			"what it does": "removes - 'sitting waiting players with enough lastActiveTime'"}
+	],
+	"database": [
+		{"id":"third", "time": "0 2 00 * * *", "action": "scheduleExpiryManager.midnightWorks", "serverId": "database-server-1",
+			"what it does": "expires mega points; snapshots player some keys; "},
+		{"id":"fourth", "time": "0 4 00 * * *", "action": "playerRakeBackManager.MorningRakeBack", "serverId": "database-server-1",
+			"what it does": "adds rake back to player balance; "},
+		{"id": "fifth", "time": "0 31 * * * *", "action": "leaderboardManager.processLeaderboard", "serverId": "database-server-1",
+			"what it does":"process the leaderboard and save data"},
+		{"id": "sixth", "time": "0 30 18 * * *", "action": "scheduleExpiryManager.scheduledBonusExpiry", "serverId": "database-server-1",
+			"what it does": "expire the locked bonus"},
+		{"id": "seventh", "time": "0 30 3 * * *", "action": "bonusMailsManager.bonusDailyUpdateMails", "serverId": "database-server-1",
+			"what it does": "send Daily locked bonus updates"},
+		{"id": "eigth", "time": "0 0 4 * * *", "action": "bonusMailsManager.lockedBonusClaimMails", "serverId": "database-server-1",
+			"what it does": "send Daily claim locked bonus updates"}
+
+	]
+}

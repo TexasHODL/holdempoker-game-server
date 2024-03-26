@@ -1,0 +1,623 @@
+{
+  "connector.entryHandler.getLobbyTables": {
+    "required stringbool success": 1,
+    "message Result" : {
+      "required string _id":1,
+      "required stringbool isRealMoney":2,
+      "required string channelName":3,
+      "required uInt32 turnTime":4,
+      "required stringbool isPotLimit":5,
+      "required uInt32 maxPlayers":6,
+      "required double smallBlind":7,
+      "required double bigBlind":8,
+      "required uInt32 minBuyIn":9,
+      "required uInt32 maxBuyIn":10,
+      "required string channelVariation":11,
+      "required uInt32 minPlayers":12,
+      "optional stringbool favourite":13,
+      "required string channelType":14,
+      "optional uInt32 playingPlayers":15,
+      "optional uInt32 queuePlayers":16,
+      "optional uInt32 avgStack":17,
+      "optional uInt32 flopPercent":18,
+      "optional uInt32 registrationStartTime2":19,
+      "optional string isPrivateTabel":20,
+      "optional stringbool isRunItTwice":21,
+      "optional string userId": 22
+    },
+    "repeated Result result": 2,
+    "required string route": 3
+  },
+  "connector.entryHandler.entry" : {
+    "required stringbool success" : 1,
+    "required uInt32 code" : 2,
+    "required string msg" : 3,
+    "message UserData" : {
+      "required string playerName" : 1,
+      "required string avatarId" : 2,
+      "required uInt32 bestHand": 3,
+      "required uInt32 totalChipsWon" : 4,
+      "required uInt32 handsPlayed" : 5,
+      "required uInt32 handsWon" : 6,
+      "required uInt32 bonus" : 7,
+      "required uInt32 timeRemaining" : 8,
+      "optional string email2" : 9,
+      "required string playerSince" : 10,
+      "required double chips" : 11,
+      "required uInt32 lastLogin" : 12,
+      "required uInt32 biggestPotWon" : 13,
+      "required uInt32 xp" : 14,
+      "required uInt32 maxXP" : 15,
+      "required uInt32 level" : 16,
+      "required stringbool isVIP" : 17,
+      "required uInt32 safeboxChips" : 18,
+      "required uInt32 last_casino" : 19,
+      "required string playerId" : 20,
+      "required string imageAvatar" : 21
+    },
+    "required UserData userData" : 4,
+    "optional string channelId" : 5,
+    "message TableInfo" : {
+      "optional uInt32 bootValue" : 1,
+      "required string channelType" : 2,
+      "optional uInt32 maxBuyIn" : 3,
+      "optional uInt32 minBuyIn" : 4
+    },
+    "optional TableInfo tableInfo" : 6,
+    "required string route" : 7
+  },
+  "sit": {
+    "required string channelId":1,
+    "required string playerId":2,
+    "required double chips":3,
+    "required uInt32 seatIndex":4,
+    "required string playerName":5,
+    "required string imageAvtar":6,
+    "required string state":7,
+    "required string route":8
+  },
+  "connector.entryHandler.getTable": {
+    "required stringbool success":1,
+    "required string channelId":2,
+    "required stringbool isTableFull":3,
+    "required stringbool isJoinedWaitingList":4,
+    "required stringbool isAlreadyPlaying":5,
+    "message Player": {
+      "required string playerName": 1,
+      "required string playerId": 2,
+      "optional double chips": 3
+    },
+    "repeated Player players":6,
+    "repeated Player waitingPlayer":7,
+    "required uInt32 avgStack": 8,
+    "required string route":9
+  },
+  "connector.entryHandler.getHandTab": {
+    "required stringbool success" :1,
+    "message HandHistory": {
+      "required string _id":1,
+      "required string channelId": 2,
+      "required double pot": 3,
+      "message Hands": {
+        "message Cards": {
+          "required string type": 1,
+          "required uInt32 rank": 2,
+          "required string name": 3,
+          "required uInt32 priority": 4
+        },
+        "repeated Cards 0": 1,
+        "repeated Cards 1": 2
+      },
+      "array Hands hands": 4,
+      "required string handHistoryId":5,
+      "required string videoId": 6,
+      "optional string roundId": 7,
+      "optional string handId": 8,
+      "optional stringbool active": 9,
+      "optional uInt32 createdAt": 10
+    },
+    "repeated HandHistory handHistory": 2,
+    "required string channelId": 3,
+    "required string route": 4
+  },
+  "playerInfo": {
+    "optional string heading": 1,
+    "optional string info": 2,
+    "optional string channelId": 3,
+    "optional string playerId": 4,
+    "optional uInt32 buttonCode": 5,
+    "required string route": 6,
+    "optional stringbool serverDown": 7
+  },
+  "antiBankingUpdatedData": {
+    "required string playerId": 1,
+    "required string channelId": 2,
+    "optional stringbool isAntiBanking":3,
+    "required sInt32 timeRemains": 4,
+    "required sInt32 amount": 5,
+    "required string event": 6,
+    "required string route": 7
+  },
+  "updateProfile": {
+    "required string playerId": 1,
+    "message Updated": {
+      "optional uInt32 freeChips": 1,
+      "optional double realChips": 2,
+      "optional uInt32 instantBonusAmount": 3,
+      "optional uInt32 unclamedBonus" : 4,
+      "optional uInt32 megaPoints" : 5,
+      "optional uInt32 megaPointsPercent": 6,
+      "optional string megaPointLevel": 7
+    },
+    "optional Updated updated":2,
+    "optional string event": 3,
+    "required string route": 4
+  },
+  "leave": {
+    "required stringbool success": 1,
+    "required string channelId": 2,
+    "required string playerId": 3,
+    "required string playerName": 4,
+    "required stringbool isStandup": 5,
+    "required string route": 6
+  },
+  "tableView": {
+    "required string _id": 1,
+    "required string channelType":2,
+    "required string playerId": 3,
+    "required string event": 4,
+    "required string route": 5,
+    "message Updated": {
+      "optional string playerName":1,
+      "optional double chips":2
+    },
+    "optional Updated updated": 6
+  },
+  "tournamentLobby": {
+    "required string _id": 1,
+    "required string playerId": 2,
+    "message Updated": {
+      "required string playerName": 1,
+      "required double chips": 2
+    },
+    "required Updated updated": 3,
+    "required string channelType": 4,
+    "required string event": 5,
+    "required string route": 6
+  },
+  "gamePlayers": {
+    "required string channelId": 1,
+    "message Players": {
+      "required string playerId": 1,
+      "required double chips": 2,
+      "required string state": 3,
+      "repeated uInt32 moves":4
+    },
+    "repeated Players players": 2,
+    "repeated string removed": 3,
+    "required string route": 4
+  },
+  "handTab": {
+    "required string channelId": 1,
+    "message HandTab": {
+      "required string _id": 1,
+      "required string channelId": 2,
+      "required string roundId": 3,
+      "required string handId": 4,
+      "required stringbool active": 5,
+      "required uInt32 createdAt": 6,
+      "required double pot": 7,
+      "message Hands": {
+        "message Cards": {
+          "required string type": 1,
+          "required uInt32 rank": 2,
+          "required string name": 3,
+          "required uInt32 priority": 4
+        },
+        "repeated Cards 0": 1,
+        "repeated Cards 1": 2
+      },
+      "array Hands hands": 8,
+      "required string handHistoryId": 9,
+      "required string videoId": 10
+    },
+    "required HandTab handTab": 2,
+    "required string route": 3
+  },
+  "preCheck": {
+    "required string channelId": 1,
+    "required string playerId": 2,
+    "required sInt32 set": 3,
+    "required string precheckValue": 4,
+    "required string route": 5
+  },
+  "playerCards" :{
+    "required string channelId": 1,
+    "required string playerId": 2,
+    "message Cards": {
+      "required string type": 1,
+      "required uInt32 rank": 2,
+      "required string name": 3,
+      "required uInt32 priority": 4
+    },
+    "repeated Cards cards": 3,
+    "required string route": 4
+  },
+  "playerState": {
+    "required string channelId": 1,
+    "required string playerId": 2,
+    "required stringbool resetTimer": 3,
+    "required string state": 4,
+    "required string route": 5
+  },
+  "turn": {
+    "optional stringbool success": 1,
+    "required string channelId": 2,
+    "optional string runBy": 3,
+    "required string playerId": 4,
+    "optional string playerName": 5,
+    "required double amount": 6,
+    "required string action": 7,
+    "required double chips": 8,
+    "optional stringbool isRoundOver": 9,
+    "required string roundName": 10,
+    "repeated double pot": 11,
+    "optional sInt32 currentMoveIndex":12, 
+    "repeated uInt32 moves": 13,
+    "required double totalRoundBet": 14,
+    "optional double lastPlayerBet": 15,
+    "required double roundMaxBet": 16,
+    "required double minRaiseAmount": 17,
+    "required double maxRaiseAmount": 18,
+    "required double totalPot": 19,
+    "required string route": 20
+  },
+  "startGame": {
+    "required string channelId": 1,
+    "required string roundId": 2,
+    "required string roundNumber": 3,
+    "required uInt32 dealerIndex": 4,
+    "required uInt32 smallBlindIndex": 5,
+    "required uInt32 bigBlindIndex": 6,
+    "required sInt32 straddleIndex": 7,
+    "repeated uInt32 moves": 8,
+    "required double smallBlind": 9,
+    "required double bigBlind": 10,
+    "repeated double pot": 11,
+    "required uInt32 roundMaxBet": 12,
+    "required string state": 13,
+    "required string roundName": 14,
+    "required uInt32 minRaiseAmount": 15,
+    "required uInt32 maxRaiseAmount": 16,
+    "required double totalPot": 17,
+    "required string route": 18
+  },
+  "connector.entryHandler.enter": {
+    "required stringbool success": 1,
+    "message JoinChannels": {
+      "required string channelId": 1,
+      "required string playerId": 2,
+      "required string playerName": 3,
+      "required string channelType": 4
+    },
+    "repeated JoinChannels joinChannels":2,
+    "required string route": 3
+  },
+  "gate.gateHandler.getConnector": {
+    "required stringbool success": 1,
+    "optional string serverVersion": 2,
+    "message User": {
+      "required string firstName": 1,
+      "required string lastName": 2,
+      "required string emailId": 3,
+      "required string playerId": 4,
+      "required string userName": 5,
+      "required string profileImage": 6,
+      "message Prefrences": {
+        "required string tableLayout": 1,
+        "required string autoBuyIn": 2,
+        "required string autoBuyInAmountInPercent": 3,
+        "required stringbool cardColor": 4
+      },
+      "required Prefrences prefrences":7,
+      "message Settings" : {
+        "required uInt32 seatPrefrence": 1,
+        "required uInt32 seatPrefrenceTwo": 2,
+        "required uInt32 seatPrefrenceSix": 3,
+        "required stringbool muteGameSound": 4,
+        "required stringbool dealerChat": 5,
+        "required stringbool playerChat": 6,
+        "optional stringbool adminChat": 7,
+        "required stringbool runItTwice": 8,
+        "required uInt32 avatarId": 9,
+        "required uInt32 tableColor": 10
+      },
+      "required Settings settings": 8,
+      "required stringbool isEmailVerified": 9,
+      "required stringbool isMobileNumberVerified": 10,
+      "required uInt32 dailyBonusCollectionTime": 11,
+      "required uInt32 freeChips": 12,
+      "required double realChips": 13,
+      "required stringbool isMuckHand": 14,
+      "required string ipV4Address": 15,
+      "message Address": {
+        "required string pincode": 1,
+        "required string city": 2,
+        "required string state": 3,
+        "required string address1": 4,
+        "required string address2": 5
+      },
+      "required Address address": 16,
+      "required string gender": 17,
+      "required string dateOfBirth": 18,
+      "required string mobileNumber": 19,
+      "required string isParentUserName": 20,
+      "required string isParent": 21,
+      "required uInt32 loyalityRakeLevel": 22,
+      "optional string panNumber": 23,
+      "optional stringbool panNumberVerified": 24,
+      "optional stringbool panNumberVerifiedFailed": 25,
+      "optional stringbool panNumberNameVerifiedFailed": 26,
+      "optional stringbool panNumberNameSelfVerified": 27,
+      "repeated stringbool letter": 28,
+      "repeated stringbool offers": 29,
+      "repeated stringbool tournaments":30,
+      "repeated stringbool anouncement": 31,
+      "required uInt32 createdAt": 32,
+      "required uInt32 lastLogin": 33,
+      "message Statistics": {
+        "required string bestHand": 1,
+        "required uInt32 handsPlayedRM": 2,
+        "required uInt32 handsPlayedPM": 3,
+        "required uInt32 handsWonRM": 4,
+        "required uInt32 handsWonPM": 5,
+        "required uInt32 handsLost": 6,
+        "required uInt32 megaPoints": 7,
+        "required string megaPointLevel": 8,
+        "required uInt32 countPointsToChips": 9,
+        "required uInt32 countPointsForBonus": 10,
+        "required uInt32 megaPointsPercent": 11
+      },
+      "required Statistics statistics": 34,
+      "required uInt32 tournamentsPlayed": 35,
+      "required uInt32 tournamentsEarnings": 36,
+      "required uInt32 unclamedBonus": 37,
+      "required string emailVerificationToken": 38,
+      "required string host": 39,
+      "required uInt32 port": 40,
+      "required stringbool cashoutGamePlay" : 41,
+      "required uInt32 totalLeaderboardWinnings" : 42
+    },
+    "optional User user": 3,
+    "optional stringbool isDisplay": 4,
+    "optional string info": 5,
+    "required string route": 6
+  },
+  "onlinePlayers": {
+    "message Data": {
+      "required uInt32 onlinePlayers": 1,
+      "required string event": 2
+    },
+    "required Data data": 1,
+    "required string route": 2
+  },
+  "roundOver": {
+    "required stringbool success": 1,
+    "required string channelId": 2,
+    "required string roundName": 3,
+    "message BoardCard": {
+        "message Cards": {
+          "required string type": 1,
+          "required uInt32 rank": 2,
+          "required string name": 3,
+          "required uInt32 priority": 4
+        },
+        "repeated Cards 0": 1,
+        "repeated Cards 1": 2
+      },
+      "array BoardCard boardCard": 4,
+    "required string route": 5
+  },
+  "gameOver": {
+    "optional stringbool success": 1,
+    "required string channelId": 2,
+    "required string endingType": 3,
+    "message Winners": {
+      "required string playerId": 1,
+      "message Set": {
+        "optional string type": 1,
+        "optional uInt32 rank": 2,
+        "optional string name": 3,
+        "optional uInt32 priority": 4
+      },
+      "repeated Set set": 2,
+      "optional string type": 3,
+      "optional string playerId": 4,
+      "optional uInt32 priority": 5,
+      "optional uInt32 winnerRank": 6,
+      "optional string text":7,
+      "optional double winningAmount": 8,
+      "optional uInt32 potIndex": 9,
+      "optional double amount": 10,
+      "optional string internalPotSplitIndex": 11,
+      "optional stringbool isRefund": 12,
+      "optional stringbool isRit": 13,
+      "optional double chips": 14,
+      "optional string typeName": 15
+    },
+    "repeated Winners winners": 4,
+    "optional uInt32 rakeDeducted":5,
+    "message CardsToShow": {
+      "optional string playerId": 1,
+      "message Cards": {
+        "optional string type": 1,
+        "optional uInt32 rank": 2,
+        "optional string name": 3,
+        "optional uInt32 priority": 4
+      },
+      "repeated Cards cards": 2
+    },
+    "repeated CardsToShow cardsToShow":6,
+    "required string route":7
+  },
+  "blindDeduction": {
+    "required stringbool success": 1,
+    "required string channelId": 2,
+    "required double smallBlindChips": 3,
+    "required double bigBlindChips": 4,
+    "required float straddleChips": 5,
+    "required uInt32 smallBlindIndex": 6,
+    "required uInt32 bigBlindIndex": 7,
+    "required sInt32 straddleIndex":8,
+    "required double smallBlind": 9,
+    "required double bigBlind" : 10,
+    "repeated double pot":11,
+    "required double totalPot": 12,
+    "repeated uInt32 moves": 13,
+    "message ForceBlind": {
+      "required string playerId": 1,
+      "required double chips": 2
+    },
+    "repeated ForceBlind forceBlind": 14,
+    "required uInt32 tableSmallBlind": 15,
+    "required uInt32 tableBigBlind": 16,
+    "required string route": 17
+  },
+  "room.channelHandler.joinChannel": {
+    "required stringbool success": 1,
+    "message TableDetails": {
+      "required string channelType": 1,
+      "required string roundId": 2, 
+      "required double smallBlind": 3,
+      "required double bigBlind": 4,
+      "required uInt32 turnTime": 5,
+      "required uInt32 extraTurnTime": 6,
+      "required stringbool isStraddleEnable": 7,
+      "required string state": 8,
+      "required uInt32 roundCount": 9,
+      "required string roundName": 10,
+      "repeated double roundBets": 11, 
+      "required double roundMaxBet": 12,
+      "required uInt32 maxBetAllowed": 13,
+      "repeated double pot": 14,
+      "message BoardCard": {
+        "message Cards": {
+          "required string type": 1,
+          "required uInt32 rank": 2,
+          "required string name": 3,
+          "required uInt32 priority": 4
+        },
+        "repeated Cards 0": 1,
+        "repeated Cards 1": 2
+      },
+      "array BoardCard boardCard": 15, 
+      "required sInt32 dealerIndex": 16,
+      "required sInt32 smallBlindIndex": 17,
+      "required sInt32 bigBlindIndex": 18,
+      "required sInt32 straddleIndex": 19,
+      "required sInt32 currentMoveIndex": 20,
+      "required double minRaiseAmount": 21,
+      "required double maxRaiseAmount": 22,
+      "required double totalPot": 23,
+      "required stringbool isTimeBankUsed": 24,
+      "required sInt32 totalTimeBank": 25, 
+      "required sInt32 timeBankLeft": 26,
+      "required uInt32 additionalTurnTime": 27,
+      "required sInt32 remainingMoveTime": 28,
+      "message Players": {
+        "required string channelId": 1,
+        "required string playerId": 2,
+        "required string playerName": 3,
+        "required double chips": 4,
+        "required uInt32 seatIndex": 5,
+        "required string state": 6,
+        "required string imageAvtar": 7,
+        "required double totalRoundBet": 8,
+        "required string lastMove": 9, 
+        "repeated uInt32 moves": 10,
+        "required sInt32 preCheck": 11,
+        "required string precheckValue": 12,
+        "required stringbool sitoutNextBigBlind": 13,
+        "required stringbool sitoutNextHand": 14,
+        "required stringbool isTournamentSitout": 15
+      },
+      "repeated Players players": 29,
+      "required stringbool isForceRit": 30,
+      "required stringbool isPrivate": 31
+    },
+    "optional TableDetails tableDetails": 2,
+    "message RoomConfig": {
+      "required string _id": 1,
+      "required string tableId": 2,
+      "required string channelType": 3,
+      "required double smallBlind": 4,
+      "required double bigBlind": 5,
+      "required stringbool isStraddleEnable": 6,
+      "required uInt32 turnTime": 7,
+      "required stringbool isPotLimit": 8,
+      "required uInt32 extraTurnTime": 9,
+      "required string channelName": 10,
+      "required string channelVariation": 11,
+      "required stringbool isRealMoney": 12,
+      "required uInt32 minBuyIn": 13,
+      "required uInt32 maxBuyIn": 14,
+      "required uInt32 minPlayers": 15,
+      "required uInt32 maxPlayers": 16,
+      "message Info": {
+        "required string TableName": 1,
+        "required string GameVariation": 2,
+        "required string ChipsType": 3,
+        "required string BuyIn": 4,
+        "required string Stakes": 5,
+        "optional string Rake": 6,
+        "optional string Rake(3-4Players)": 7,
+        "optional string Rake(HeadsUp)": 8,
+        "required uInt32 CapAmount": 9,
+        "required uInt32 MaxPlayers": 10,
+        "required string Straddle": 11,
+        "required string TurnTime": 12,
+        "required string Anti-Banking": 13
+      },
+      "required Info info": 17
+    },
+    "optional RoomConfig roomConfig": 3,
+    "optional string channelId": 4,
+    "optional string tableId": 5,
+    "optional string playerId": 6,
+    "optional string playerName": 7,
+    "message Cards": {
+      "required string type": 1,
+      "required uInt32 rank": 2,
+      "required string name": 3,
+      "required uInt32 priority": 4
+    },
+    "repeated Cards cards": 8,
+    "optional string bestHands": 9,
+    "optional string lastMove": 10,
+    "optional stringbool isRunItTwice": 11,
+    "optional stringbool isForceBlindEnable": 12,
+    "optional stringbool isJoinWaiting": 13,
+    "message Settings": {
+      "required stringbool muteGameSound": 1,
+      "required stringbool dealerChat": 2,
+      "required stringbool playerChat": 3,
+      "required uInt32 tableColor": 4,
+      "required stringbool cardColor": 5,
+      "required stringbool isMuckHand": 6
+    },
+    "optional Settings settings": 14,
+    "message AntiBanking": {
+      "required stringbool isAntiBanking": 1,
+      "required sInt32 amount": 2,
+      "required sInt32 timeRemains": 3
+    },
+    "optional AntiBanking antibanking": 15,
+    "optional stringbool isJoinedOnce": 16,
+    "optional stringbool firstJoined": 17,
+    "required string route": 18,
+    "optional string info": 19,
+    "optional stringbool isDisplay": 20,
+    "optional stringbool isRetry": 21
+  }
+}
+

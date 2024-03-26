@@ -1,0 +1,214 @@
+{
+  "connector.entryHandler.getLobbyTables": {
+    "required stringbool success": 1,
+    "message Result" : {
+      "required string _id":1,
+      "required stringbool isRealMoney":2,
+      "required string channelName":3,
+      "required uInt32 turnTime":4,
+      "required stringbool isPotLimit":5,
+      "required uInt32 maxPlayers":6,
+      "required uInt32 smallBlind":7,
+      "required uInt32 bigBlind":8,
+      "required uInt32 minBuyIn":9,
+      "required uInt32 maxBuyIn":10,
+      "required string channelVariation":11,
+      "required uInt32 minPlayers":12,
+      "optional stringbool favourite":13,
+      "required string channelType":14,
+      "optional uInt32 playingPlayers":15,
+      "optional uInt32 queuePlayers":16,
+      "optional uInt32 avgStack":17,
+      "optional uInt32 flopPercent":18,
+      "optional uInt32 registrationStartTime2":19
+    },
+    "repeated Result result": 2,
+    "required string route": 3
+},
+  "connector.entryHandler.getTable": {
+    "required stringbool success":1,
+    "required string channelId":2,
+    "required stringbool isTableFull":3,
+    "required stringbool isJoinedWaitingList":4,
+    "required stringbool isAlreadyPlaying":5,
+    "message Player": {
+      "required string playerName": 1,
+      "required string playerId": 2,
+      "optional uInt32 chips": 3
+    },
+    "repeated Player players":6,
+    "repeated Player waitingPlayer":7,
+    "required string route":8
+  },
+
+  "connector.entryHandler.entry" : {
+    "required stringbool success" : 1,
+    "required uInt32 code" : 2,
+    "required string msg" : 3,
+    "message UserData" : {
+      "required string playerName" : 1,
+      "required string avatarId" : 2,
+      "required uInt32 bestHand": 3,
+      "required uInt32 totalChipsWon" : 4,
+      "required uInt32 handsPlayed" : 5,
+      "required uInt32 handsWon" : 6,
+      "required uInt32 bonus" : 7,
+      "required uInt32 timeRemaining" : 8,
+      "optional string email2" : 9,
+      "required string playerSince" : 10,
+      "required uInt32 chips" : 11,
+      "required uInt32 lastLogin" : 12,
+      "required uInt32 biggestPotWon" : 13,
+      "required uInt32 xp" : 14,
+      "required uInt32 maxXP" : 15,
+      "required uInt32 level" : 16,
+      "required stringbool isVIP" : 17,
+      "required uInt32 safeboxChips" : 18,
+      "required uInt32 last_casino" : 19,
+      "required string playerId" : 20,
+      "required string imageAvatar" : 21
+    },
+    "required UserData userData" : 4,
+    "optional string channelId" : 5,
+    "message TableInfo" : {
+      "optional uInt32 bootValue" : 1,
+      "required string channelType" : 2,
+      "optional uInt32 maxBuyIn" : 3,
+      "optional uInt32 minBuyIn" : 4
+    },
+    "optional TableInfo tableInfo" : 6,
+    "required string route" : 7
+  },
+  "gate.gateHandler.login" : {
+    "required stringbool success" : 1,
+    "required uInt32 code" : 2,
+    "required string info" : 3,
+    "message Data" : {
+      "required string host" : 1,
+      "required uInt32 port" : 2,
+      "required string authToken" : 3
+    },
+    "optional Data data" : 4,
+    "required string route" : 5
+  },
+  "connector.entryHandler.noLimitTables" : {
+    "required stringbool success" : 1,
+    "message Data" : {
+      "required string name" : 1,
+      "required string gameVariation" : 2,
+      "required uInt32 bootValue" : 3,
+      "required uInt32 minBuyIn" : 4,
+      "required uInt32 maxBuyIn" : 5,
+      "required string tableId" : 6,
+      "required uInt32 playerOnline" : 7
+    },
+    "repeated Data data" : 2,
+    "required string route" : 3
+  },
+  "room.channelHandler.joinChannel" : {
+    "required stringbool success" : 1,
+    "required string channelId" : 2,
+    "message TableDetails" : {
+      "required string channelId" : 1,
+      "required string channelType" : 2,
+      "required uInt32 turnTime" : 3,
+      "required uInt32 bootValue" : 4,
+      "optional string potLimitAmt2" : 5,
+      "required string state" : 6,
+      "repeated uInt32 pots" : 7,
+      "required int32 dealorIndex" : 8,
+      "optional string sideShowRequest2" : null,
+      "message Player" : {
+        "required string channelId" : 1,
+        "required string playerId" : 2,
+        "required string playerName" : 3,
+        "required uInt32 chips" : 4,
+        "required uInt32 seatIndex" : 5,
+        "required string state" : 6,
+        "required stringbool seen" : 7,
+        "repeated string cards" : 8,
+        "required string imageAvatar" : 9,
+        "required string avatarId" : 10,
+        "optional string lastMove2" : 11,
+        "optional string preCheck2" : 12,
+        "optional string turn2" : 13,
+        "required stringbool onBreak" : 14
+      },
+      "repeated Player players" : 10
+    },
+    "optional TableDetails tableDetails" : 3,
+    "message RoomConfig" : {
+      "required stringbool isPotLimit" : 1,
+      "required stringbool isPrivate" : 2,
+      "required uInt32 dealorId" : 3,
+      "required uInt32 turnTime" : 4,
+      "required string channelName" : 5,
+      "required string gameVariation" : 6,
+      "optional uInt32 minBuyIn" : 7,
+      "optional uInt32 maxBuyIn" : 8,
+      "required uInt32 minPlayers" : 9,
+      "required uInt32 maxPlayers" : 10,
+      "optional uInt32 blindLimit2" : 11,
+      "optional uInt32 chaalLimit2" : 12
+    },
+    "optional RoomConfig roomConfig" : 4,
+    "required string route" : 5
+  },
+  "connector.entryHandler.giftList" : {
+    "required stringbool success" : 1,
+    "required uInt32 code" : 2,
+    "required string msg" : 3,
+    "message Data" : {
+      "required string _id" : 1,
+      "required uInt32 giftId" : 2,
+      "required string type" : 3,
+      "required uInt32 price" : 4,
+      "required string name" : 5
+    },
+    "repeated Data data" : 4,
+    "required string route" : 5
+  },
+  "SIT" : {
+    "required string channelId" : 1,
+    "required string playerId" : 2,
+    "required uInt32 chips" : 3,
+    "required uInt32 seatIndex" : 4,
+    "required string playerName" : 5,
+    "required string imageAvatar" : 6,
+    "required string avatarId" : 7,
+    "required string state" : 8,
+    "required string route" : 9
+  },
+  "GAME_START" : {
+    "required string state" : 1,
+    "required int32 dealorIndex" : 2,
+    "repeated uInt32 pots" : 3,
+    "required uInt32 bootValue" : 4,
+    "message Player" : {
+      "required string playerId" : 1,
+      "required string state" : 2,
+      "required uInt32 chips" : 3
+    },
+    "repeated Player players" : 5,
+    "message PlayerTurn" : {
+      "message Turn" : {
+        "message TurnData" : {
+          "required uInt32 turnTime" : 1,
+          "required uInt32 SET" : 2,
+          "required uInt32 amt" : 3
+        },
+        "required string turnId" : 1,
+        "required TurnData data" : 2
+      },
+      "optional Turn prev" : 1,
+      "optional Turn next" : 2
+    },
+    "optional PlayerTurn playerTurn" : 6,
+    "required string route" : 7
+  },
+  "PLAYER_PRECHECK" : {
+    "required uInt32 SET" : 1,
+    "required uInt32 amt" : 2,
+    "required string route" : 3
+  }
+}

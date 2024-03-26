@@ -1,0 +1,43 @@
+var newTournamentTables = {};
+newTournamentTables.newTournamentTables = [
+{
+    "isRealMoney" : false,
+    "channelName" : "Manila Sit N Go 3",
+    "tournamentType" : "SIT N GO",
+    "turnTime" : 20,
+    "isPotLimit" : false,
+    "maxPlayers" : 3,
+    "minPlayers" : 0,
+    "smallBlind" : 10,
+    "bigBlind" : 20,
+    "isStraddleEnable" : false,
+    "gameInfo" : "check",
+    "gameInterval" : 55,
+    "blindMissed" : -1,
+    "channelVariation" : "Texas Hold’em",
+    "entryfees" : 400,
+    "housefees" : 100,
+    "bountyfees" : 0,
+    "tournamentTime" : -1,
+    "tournamentRunningTime" : -1,
+    "tournamentBreakTime" : -1,
+    "tournamentRules" : "check",
+    "winTicketsForTournament" : "-1",
+    "extraTimeAllowed" : 5,
+    "blindRule" : "5791f351e7b566a92ac046b6",
+    "prizeRule" : "57cf9d2709f25c2f0b42db1d",
+    "isActive" : true,
+    "channelType" : "TOURNAMENT",
+    "totalGame" : 0,
+    "totalPot" : 0,
+    "avgPot" : 0,
+    "totalPlayer" : 0,
+    "totalFlopPlayer" : 0,
+    "avgFlopPercent" : 0,
+    "totalStack" : 0,
+    "state" : "REGISTER",
+    "gameVersionCount" : 0,
+    "lateRegistrationAllowed" : false
+}];
+
+module.exports = newTournamentTables;

@@ -1,0 +1,12 @@
+{
+	"connectorServerIp"     : "127.0.0.1",
+	"connectorServerlogPort": "7001",
+	"databaseServerIp"      : "127.0.0.1",
+	"databaseServerlogPort" : "7002",
+	"gateServerIp"          : "127.0.0.1",
+	"gateServerlogPort"     : "7003",
+	"authServerIp"          : "127.0.0.1",
+	"authServerlogPort"     : "7004",
+	"roomServerIp"          : "127.0.0.1",
+	"roomServerlogPort"     : "7005"
+}
